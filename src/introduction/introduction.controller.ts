@@ -1,4 +1,10 @@
-import { BadRequestException, Controller, Get, Param } from '@nestjs/common';
+import {
+  BadRequestException,
+  Controller,
+  Get,
+  Headers,
+  Param,
+} from '@nestjs/common';
 import { ArticleData, WikipediaService } from '../wikipedia/wikipedia.service';
 
 @Controller('introduction')
@@ -8,6 +14,7 @@ export class IntroductionController {
   @Get(':articleName')
   public getArticle(
     @Param('articleName') articleName: string,
+    @Headers('accept-language') language: string,
   ): Promise<ArticleData> {
     // Regular expression to check if string is a valid url slug
     const regexExp = /^[a-z0-9]+(?:(?:-|_)+[a-z0-9]+)*$/gm;
@@ -19,6 +26,6 @@ export class IntroductionController {
       );
     }
 
-    return this.wikipediaService.getArticleData(articleName);
+    return this.wikipediaService.getArticleData(articleName, language);
   }
 }
