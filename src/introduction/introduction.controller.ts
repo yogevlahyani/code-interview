@@ -4,6 +4,7 @@ import {
   Get,
   Headers,
   Param,
+  Req,
 } from '@nestjs/common';
 import { ArticleData, WikipediaService } from '../wikipedia/wikipedia.service';
 
@@ -13,6 +14,7 @@ export class IntroductionController {
 
   @Get(':articleName')
   public getArticle(
+    @Req() req,
     @Param('articleName') articleName: string,
     @Headers('accept-language') language: string,
   ): Promise<ArticleData> {
@@ -26,6 +28,9 @@ export class IntroductionController {
       );
     }
 
-    return this.wikipediaService.getArticleData(articleName, language);
+    return this.wikipediaService.getArticleData(
+      articleName,
+      req.user?.language || language,
+    );
   }
 }
