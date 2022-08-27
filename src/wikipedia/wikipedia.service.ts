@@ -20,8 +20,9 @@ export class WikipediaService {
   ): Promise<ArticleData> {
     const scrapeDate = Math.floor(+new Date() / 1000);
     const slug = encodeURIComponent(articleName.replace(' ', '_'));
+    const languageCode = language.substring(0, 2);
     const { data } = await this.httpService.axiosRef.get(
-      `https://${language}.wikipedia.org/wiki/${slug}`,
+      `https://${languageCode}.wikipedia.org/wiki/${slug}`,
       {
         headers: {
           'Accept-Language': language,
