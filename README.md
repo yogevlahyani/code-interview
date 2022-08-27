@@ -24,49 +24,55 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This repository is a solution for the [Exercise](https://github.com/Periapt-Health/code-interview#exercise) section in the [Periapt-Health/code-interview](https://github.com/Periapt-Health/code-interview) repository.
+
+## Going over parts of the exercises
+
+### [Part A](https://github.com/Periapt-Health/code-interview#part-a)
+
+checkout to a branch called `part-a`
+```bash
+git checkout part-a
+```
+
+For more details (diff & comments) see [PR](https://github.com/yogevlahyani/periapt-code-interview/pull/3)
+
+### [Part B](https://github.com/Periapt-Health/code-interview#part-a)
+
+checkout to a branch called `part-b`
+```bash
+git checkout part-b
+```
+
+For more details (diff & comments) see [PR](https://github.com/yogevlahyani/periapt-code-interview/pull/1)
+
+### [Part C](https://github.com/Periapt-Health/code-interview#part-a)
+
+checkout to a branch called `part-c`
+```bash
+git checkout part-c
+```
+
+For more details (diff & comments) see [PR](https://github.com/yogevlahyani/periapt-code-interview/pull/2)
 
 ## Installation
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
