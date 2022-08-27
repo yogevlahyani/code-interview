@@ -11,13 +11,13 @@ export class DatabaseService<Model> {
     return this.db.set(token, { token, ...data });
   }
 
-  public async find(token?: string): Promise<Model[]> {
+  public async find(token?: string): Promise<Model[] | Model> {
     if (!token) {
       const keys = await this.db.store.keys();
 
       return Promise.all(keys.map((key) => this.db.get(key)));
     }
 
-    return this.db.store.mget(token);
+    return this.db.store.get(token);
   }
 }

@@ -10,7 +10,7 @@ export class UserService {
     return this.db.create(data);
   }
 
-  public find(token?: string): Promise<User[]> {
+  public find(token?: string): Promise<User | User[]> {
     return this.db.find(token);
   }
 }
